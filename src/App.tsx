@@ -1,19 +1,26 @@
 import "./App.css";
 import HtmlToPdf from "./htmltopdf";
-import logo from "./logo.svg";
+import { pathImg } from "./constants";
 
 function App() {
-  const { getDataUrl, downloadPdf } = HtmlToPdf();
+  const { downloadPdf } = HtmlToPdf();
   return (
-    <div className="App">
-      <header className="App-header">
-        <button onClick={() => console.log(getDataUrl())}>Get PDF here!</button>
-        <br />
-        <img src={logo} alt="logo" width={120} />
-        <button onClick={downloadPdf}>
-          Or click here to download the PDF!
-        </button>
-      </header>
+    <div id="test">
+      <div className="App">
+        <header className="App-header">
+          <h1>testing h1</h1>
+          <h2>testing h2</h2>
+          <p>
+            <b>This is bold text</b>, <i>this is italic text</i>.
+          </p>
+          <p>Here are some special characters: &copy; &lt;3 &amp;</p>
+          This is a new line.
+          <img src={pathImg} width="100" height="66" alt="something" />
+          <button onClick={downloadPdf}>
+            Or click here to download the PDF!
+          </button>
+        </header>
+      </div>
     </div>
   );
 }
